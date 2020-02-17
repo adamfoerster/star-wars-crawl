@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
+import Crawl from './Crawl';
+import FilmList from './FilmList';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  content = 'Clique em um dos filmes para carregar o Crawl';
+  fetchFilm(id: number) {
+    fetch(`https://swapi.co/api/films/${id}`)
+      .then(film => console.log(film))
+      .catch(console.log);
+  }
+
+  onLoadFilmClick(id: string) {
+    console.log(id);
+    this.fetchFilm(+id);
+  }
+
+  render() {
+    const {content} = this;
+    return (
+      <div className="container">
+        <Crawl content={content}></Crawl>
+        <FilmList onSelected={this.onLoadFilmClick.bind(this)} />
+      </div>
+    )
+  };
 }
 
 export default App;

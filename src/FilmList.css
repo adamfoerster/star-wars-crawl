@@ -1,0 +1,8 @@
+.film-container {
+  position: absolute;
+  top: 0;
+}
+
+a {
+  cursor: pointer;
+}
