@@ -17,7 +17,7 @@ class Crawl extends React.Component<{ content: string }> {
 }
 
 const textToHtml = (content: string) => {
-  return content.split(/\cJ/).join('<br />');
+  return content.split(/\cJ/).join(' ');
 }
 
 export default Crawl;

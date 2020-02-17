@@ -3,24 +3,36 @@ import Crawl from './Crawl';
 import FilmList from './FilmList';
 import './App.css';
 
-class App extends React.Component {
-  content = 'Clique em um dos filmes para carregar o Crawl';
+class App extends React.Component<any, any> {
+  
+  constructor(props) {
+    super(props);
+    this.state = {
+      content: 'Clique em um dos filmes para carregar o Crawl. Use o scroll para mover o texto.',
+    };
+  }
+
   fetchFilm(id: number) {
-    fetch(`https://swapi.co/api/films/${id}`)
-      .then(film => console.log(film))
+    this.setState({content: 'Carregando...'});
+    fetch(`https://swapi.co/api/films/${id}`, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+    })
+      .then(response => response.json())
+      .then(film => {
+        this.setState({content: film.opening_crawl});
+      })
       .catch(console.log);
   }
 
   onLoadFilmClick(id: string) {
-    console.log(id);
     this.fetchFilm(+id);
   }
 
   render() {
-    const {content} = this;
     return (
       <div className="container">
-        <Crawl content={content}></Crawl>
+        <Crawl content={this.state.content}></Crawl>
         <FilmList onSelected={this.onLoadFilmClick.bind(this)} />
       </div>
     )

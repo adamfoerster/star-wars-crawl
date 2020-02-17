@@ -25,26 +25,14 @@ article p {
   -webkit-transform: translateY(800px);
   -moz-transform: translateY(800px);
   transform: translateY(800px);
-  -webkit-animation: txtdmove 70s linear 3s 1;
-  -moz-animation: txtdmove 70s linear 3s 1;
   animation: txtdmove 70s linear 3s 1;
   padding: 0 20%;
 }
 
 article p:last-child {
-  margin-bottom: 1000px;
+  margin-bottom: 1400px;
 }
 
 article::-webkit-scrollbar { 
   display: none; 
-}
-
-
-@keyframes txtmove {
-  0% {
-    -webkit-transform: translateY(800px);
-  }
-  100% {
-    -webkit-transform: translateY(-1400px);
-  }
 }
