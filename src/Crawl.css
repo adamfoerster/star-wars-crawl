@@ -8,7 +8,7 @@
 section {
   -webkit-perspective: 300;
   width: 600px;
-  margin: -75% auto 0;
+  margin: -100% auto 0;
 }
 
 article {
@@ -30,7 +30,7 @@ article p {
 }
 
 article p:last-child {
-  margin-bottom: 1400px;
+  margin: 200px 0 1000px;
 }
 
 article::-webkit-scrollbar { 
