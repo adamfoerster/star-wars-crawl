@@ -12,10 +12,8 @@ section {
 }
 
 article {
-  height: 100%;
   overflow: scroll;
   font-size: 25px;
-  height: 100%;
   -webkit-transform: rotateX(35deg);
   -moz-transform: rotateX(35deg);
   transform: rotateX(35deg);
@@ -27,6 +25,7 @@ article p {
   transform: translateY(800px);
   animation: txtdmove 70s linear 3s 1;
   padding: 0 20%;
+  text-align: justify;
 }
 
 article p:last-child {
