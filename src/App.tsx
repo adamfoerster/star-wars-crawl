@@ -8,7 +8,7 @@ class App extends React.Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {
-      content: 'Clique em um dos filmes para carregar o Crawl. Use o scroll para mover o texto.',
+      content: 'Clique em um dos filmes na lista ao lado para carregar o Crawl. Use o scroll para mover o texto. Esse site não foi otimizado para mobile. E que a força esteja com você. Sempre!',
       padding: 1
     };
   }
